@@ -1,0 +1,10 @@
+GET http://localhost:5000/all
+
+###
+POST http://localhost:5000/create
+Content-Type: application/json
+
+{
+    "title": "Second Blog",
+    "content": "My second blog!"
+}

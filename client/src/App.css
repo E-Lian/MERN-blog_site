@@ -1,0 +1,76 @@
+* {
+  background-color: #1b1b1b;
+  font-family: Arial;
+  color: #cacac8;
+}
+
+.link {
+  font-family: Arial;
+  font-weight: bold;
+}
+
+.not-found {
+  margin: auto;
+  align-self: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  height: 500px;
+}
+
+.not-found * {
+  padding: auto;
+  font-size: 70px;
+  align-self: center;
+  text-align: center;
+}
+
+.navbar *{
+  background-color: #11cd0ad4;
+  padding-left: 40px;
+  padding-top: 35px;
+  padding-bottom: 0px;
+  display: flex;
+  max-width: 1920px;
+  height: 70px;
+  margin: auto;
+  color: #1b1b1b;
+}
+
+.navbar h1{
+  font-size: 30px;
+}
+
+.footer {
+  background-color: #2b2b2b;
+  padding: 50px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.blog-prev {
+  align-self: center;
+  align-content: center;
+  background-color: #3b3b3b;
+  width: 50%;
+  height: 130px;
+  margin: 20px auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+}
+
+.blog-prev * {
+  background-color: #3b3b3b;
+  margin-left: 10%;
+}
+
+.blog-prev .link {
+  font-size: 40px;
+  text-decoration: none;
+}
+
+.blog-prev .author {
+  color:#11cd0ac0;
+  font-size: 15px;
+}
