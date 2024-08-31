@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 
 const BlogPreview = ({ blog }) => {
     return (
-      <div class="blog-prev">
-        <Link to="/not found" class="link">{blog.title}</Link>
-        <p class="author">By {blog.author}</p>
+      <div className="blog-prev">
+        <Link to={`/blog/${blog._id}`} className="link" >{blog.title}</Link>
+        <p className="author">By {blog.author}</p>
       </div>
     );
   }

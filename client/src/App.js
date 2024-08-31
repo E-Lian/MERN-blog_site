@@ -1,11 +1,13 @@
+import {createBrowserRouter, RouterProvider,} from "react-router-dom";
+
 import './App.css';
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import BlogList from './components/BlogList';
 import CreateBlog from "./components/CreateBlog";
 import NotFound from './components/NotFound';
+import Blog from './components/Blog';
 
-import {createBrowserRouter, RouterProvider,} from "react-router-dom";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: '/create',
     element: <CreateBlog/>
+  }, 
+  {
+    path: '/blog/:blogId',
+    element: <Blog />
   }
 ]);
 
@@ -24,7 +30,7 @@ function App() {
   return (
     <div className="App">
       <Navbar/>
-      <div class="content">
+      <div className="content">
         <RouterProvider router={router}/>
       </div>
       <Footer/>

@@ -14,7 +14,7 @@ const BlogList = () => {
   }, []);
   
   return (
-    <div class="blog-list">
+    <div className="blog-list">
       {(typeof message.blogs === 'undefined') ? (
         <h1>Loading...</h1>
       ) : (message.blogs.map((blog, i) => {

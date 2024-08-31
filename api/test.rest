@@ -8,3 +8,6 @@ Content-Type: application/json
     "title": "Second Blog",
     "content": "My second blog!"
 }
+
+###
+GET http://localhost:5000/blog/66cea309adda8fb3c5a04abe

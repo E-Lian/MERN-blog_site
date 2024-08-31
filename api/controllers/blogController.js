@@ -5,7 +5,12 @@ const Blog = require("../models/blog")
 exports.blog_list = asyncHandler(async (req, res, next) => {
     const blogs = await Blog.find()
     res.json({"blogs": blogs})
-  });
+});
+
+exports.find_blog = asyncHandler(async (req, res, next) => {
+  const blog = await findBlog(req, res)
+  res.json(blog)
+});
 
 exports.make_blog = asyncHandler(async (req, res, next) => {
     const blog = new Blog ({
@@ -17,3 +22,16 @@ exports.make_blog = asyncHandler(async (req, res, next) => {
       const newBlog = await blog.save()
       res.status(201).json(newBlog)
 })
+
+async function findBlog (req, res) {
+  let blog
+  try {
+    blog = await Blog.findById(req.params.id)
+    if (blog == null) {
+      return res.status(404).json({ message: 'Cannot find blog' })
+    }
+  } catch (err) {
+    return res.status(500).json({ message: err.message })
+  }
+  return blog
+}
