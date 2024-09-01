@@ -17,7 +17,7 @@ const BlogList = () => {
     <div className="blog-list">
       {(typeof message.blogs === 'undefined') ? (
         <h1>Loading...</h1>
-      ) : (message.blogs.map((blog, i) => {
+      ) : (message.blogs.toReversed().map((blog, i) => {
         return (<BlogPreview blog={blog}/>)
       }))}
     </div>

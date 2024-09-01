@@ -1,9 +1,9 @@
-//import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <nav className="navbar">
-      <h1>My Blog</h1>
+      <a href="/" className="name">A Blog Site</a>
+      <a href="/create" className="create-form">New Blog</a>
     </nav>
   );
 }
