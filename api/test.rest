@@ -13,4 +13,4 @@ Content-Type: application/json
 GET http://localhost:5000/blog/1
 
 ###
-DELETE http://localhost:5000/blog/66d2dfe08e5dc24717db494c
+DELETE http://localhost:5000/blog/66cea309adda8fb3c5a04abe

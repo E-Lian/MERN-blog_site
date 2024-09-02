@@ -14,7 +14,7 @@ const CreateBlog = () => {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(blog)
           }).then(() => {
-            console.log('new blog added');
+            window.location.href = '/'
           }).catch(err => console.log(err));
     };
 

@@ -133,6 +133,8 @@
 }
 
 .blog-page {
+  margin: auto;
+  max-width: 70%;
   min-height: 500px;
 }
 
@@ -154,7 +156,7 @@
 
 .blog-page .blog-author {
   color: #0f950a;
-  font-size: 40px;
+  font-size: 30px;
 }
 
 .blog-page .blog-content {
@@ -163,7 +165,6 @@
 
 .blog-page #back {
   font-size: 20px;
-  margin-left: 17%;
   font-stretch: wider;
   font-weight: lighter;
 }

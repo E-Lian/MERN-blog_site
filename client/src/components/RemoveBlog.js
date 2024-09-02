@@ -9,7 +9,6 @@ const RemoveBlog = ({blogId}) => {
             } else {
                 window.location.href = '/'
                 alert("This blog has been removed successfully.")
-                
             }
           }).catch(err => console.log(err));
         
