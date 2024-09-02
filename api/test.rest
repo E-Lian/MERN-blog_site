@@ -14,3 +14,13 @@ GET http://localhost:5000/blog/1
 
 ###
 DELETE http://localhost:5000/blog/66cea309adda8fb3c5a04abe
+
+###
+PUT http://localhost:5000/blog/66d54b5234fd663f54b470e1
+Content-Type: application/json
+
+{
+    "title": "Another Blog",
+    "content": "Edited blog",
+    "author": "y1hua"
+}

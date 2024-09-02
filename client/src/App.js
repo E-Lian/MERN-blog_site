@@ -7,6 +7,7 @@ import BlogList from './components/BlogList';
 import CreateBlog from "./components/CreateBlog";
 import NotFound from './components/NotFound';
 import Blog from './components/Blog';
+import EditForm from "./components/EditForm";
 
 
 const router = createBrowserRouter([
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
     path: '/create',
     element: <CreateBlog/>
   }, 
+  {
+    path: '/blog/edit/:blogId',
+    element: <EditForm />
+  },
   {
     path: '/blog/:blogId',
     element: <Blog />

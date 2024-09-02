@@ -1,7 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import RemoveBlog from "./RemoveBlog";
-import NotFound from "./NotFound";
+import EditBlog from "./EditBlog";
 
 const Blog = () => {
   const params = useParams();
@@ -29,7 +29,10 @@ const Blog = () => {
       <br />
       <br />
       <p className="blog-content">{blogData.content}</p>
-      <RemoveBlog blogId={blogData._id} />
+      <div className="change-buttons">
+        <EditBlog blogId={blogData._id} />
+        <RemoveBlog blogId={blogData._id} />
+      </div>
     </div>
   );
 };

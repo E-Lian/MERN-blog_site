@@ -4,10 +4,6 @@
   color: #f5f5f7;
 }
 
-.link {
-  font-family: Arial;
-  font-weight: bold;
-}
 
 .not-found {
   margin: auto;
@@ -169,15 +165,40 @@
   font-weight: lighter;
 }
 
+.change-buttons {
+  margin: center;
+}
+
+.change-buttons *{
+  margin: 40px;
+}
+
 .remove-blog {
   color: #fa5e55;
   max-width: 8%;
-  padding: 10px 3px;
-  margin-top: 50px;
-  border-radius: 10px;
+  padding: 10px 12px;
+  margin: 50px auto;
+  border-radius: 13px;
+  display: inline-block;
 }
 
 .remove-blog:hover {
   background-color: #fa5e55;
+  color: #f5f5f7;
+}
+
+.edit-blog {
+  text-decoration: none;
+  font-size: larger;
+  color: #0078d4;
+  max-width: 8%;
+  padding: 10px 12px;
+  margin: 50px 20px;
+  border-radius: 13px;
+  display: inline-block;
+}
+
+.edit-blog:hover {
+  background-color: #0078d4;
   color: #f5f5f7;
 }

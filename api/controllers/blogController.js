@@ -7,11 +7,13 @@ exports.blog_list = asyncHandler(async (req, res, next) => {
   res.json({ blogs: blogs });
 });
 
+// get one blog
 exports.find_blog = asyncHandler(async (req, res, next) => {
   const blog = await findBlog(req, res);
   res.json(blog);
 });
 
+// create a blog
 exports.make_blog = asyncHandler(async (req, res, next) => {
   const blog = new Blog({
     title: req.body.title,
@@ -23,8 +25,19 @@ exports.make_blog = asyncHandler(async (req, res, next) => {
   res.status(201).json(newBlog);
 });
 
+// remove a blog
 exports.remove_blog = asyncHandler(async (req, res, next) => {
   const blog = await Blog.findByIdAndDelete(req.params.id)
+  if (!blog) {
+    res.status(404).send('Blog not found')
+  } else {
+    res.json(blog)
+  }
+})
+
+// edit a blog
+exports.edit_blog = asyncHandler(async (req, res, next) => {
+  const blog = await Blog.findByIdAndUpdate(req.params.id, req.body)
   if (!blog) {
     res.status(404).send('Blog not found')
   } else {
