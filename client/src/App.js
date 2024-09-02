@@ -8,6 +8,7 @@ import CreateBlog from "./components/CreateBlog";
 import NotFound from './components/NotFound';
 import Blog from './components/Blog';
 import EditForm from "./components/EditForm";
+import LoginPage from "./components/LoginPage";
 
 
 const router = createBrowserRouter([
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
     element: <BlogList/>,
     errorElement: <NotFound/>
   }, 
+  {
+    path: '/login',
+    element: <LoginPage/>
+  },
   {
     path: '/create',
     element: <CreateBlog/>
