@@ -34,7 +34,7 @@ const CreateBlog = () => {
                 <textarea type="text" id="content" name="content" value = {content} onChange={(e) => {
                     setContent(e.target.value)
                 }}/><br/><br/>
-                <button>Create</button>
+                <button>Add this blog</button>
             </form>
         </div>
     )
