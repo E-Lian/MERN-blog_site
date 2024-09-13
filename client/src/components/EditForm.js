@@ -34,7 +34,7 @@ const EditForm = () => {
   };
 
   return (
-    <div className="edit-form create-blog">
+    <div className="form edit-blog">
       <h1>Edit Blog</h1>
       <form onSubmit={handleSubmit}>
         <label for="edit-title">Title:</label>
@@ -46,9 +46,11 @@ const EditForm = () => {
             setTitle(e.target.value);
           }}
         />
-        <p>
+        <br/>
+        <label>
           Author: <span class="edit-author">{author}</span>
-        </p>
+        </label>
+        <br/>
         <label for="edit-content">Content:</label>
         <textarea
           value={content}
@@ -57,6 +59,7 @@ const EditForm = () => {
             setContent(e.target.value);
           }}
         ></textarea>
+        <br/>
         <button type="submit">Submit edit</button>
       </form>
     </div>

@@ -40,9 +40,8 @@
   display: inline-block;
 }
 
-.navbar .create-form {
+.navbar .create-button {
   background-color: #69f802;
-  text-align: center;
   color: #1b1b1b;
   text-decoration: none;
   font-weight: bold;
@@ -53,9 +52,9 @@
   width: 200px;
 }
 
-.navbar .create-form:hover {
+.navbar .create-button:hover {
   background-color: rgb(88, 204, 6);
-  color: #2b2b2b
+  color: #030303;
 }
 
 .footer {
@@ -95,19 +94,19 @@
   font-size: 15px;
 }
 
-.create-blog {
+.form {
   max-width: 400px;
   margin: 0 auto;
   text-align: center;
 }
 
-.create-blog label {
+.form label {
   text-align: left;
   display: block;
   font-size: 20px;
 }
 
-.create-blog [type=text], .create-blog textarea {
+.form [type=text], .form textarea {
   width: 100%;
   padding: 6px 10px;
   margin: 10px 0;
@@ -116,19 +115,21 @@
   display: block;
 }
 
-.create-blog textarea {
+.form textarea {
   height: 130px;
 }
 
-.create-blog button {
+.form button {
   border: 0px;
   font-size: 20px;
+  font-weight: bold;
   background-color: #0f950a;
   padding: 10px 25px;
+  border-radius: 5px;
   margin-bottom: 40px;
 }
 
-.create-blog button:hover {
+.form button:hover {
   box-shadow: 0 10px 30px #3b3b3b;
 }
 
@@ -191,7 +192,7 @@
   color: #f5f5f7;
 }
 
-.edit-blog {
+.edit-button {
   text-decoration: none;
   font-size: larger;
   color: #0078d4;
@@ -202,7 +203,19 @@
   display: inline-block;
 }
 
-.edit-blog:hover {
+.edit-button:hover {
   background-color: #0078d4;
   color: #f5f5f7;
+}
+
+.edit-blog *{
+  margin: 10px auto;
+}
+
+.edit-blog {
+  margin-top: 40px;
+}
+
+.edit-blog .edit-author {
+  color: #0f950a;
 }
