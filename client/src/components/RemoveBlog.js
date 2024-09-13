@@ -4,7 +4,7 @@ const RemoveBlog = ({blogId}) => {
         fetch(`/blog/${blogId}`, {
             method: 'DELETE'
           }).then((res) => {
-            if (res.status == 404) {
+            if (res.status === 404) {
                 alert("Something's wrong. Can't delete this blog.")
             } else {
                 window.location.href = '/'
