@@ -1,7 +1,11 @@
+import { useNavigate } from "react-router-dom"
+
 
 const EditBlog = ({blogId}) => {
+    const navigate = useNavigate();
+
     const handleEdit = () => {
-        window.location.href = `/blog/edit/${blogId}`
+        navigate(`/blog/edit/${blogId}`);
     }
 
     return (

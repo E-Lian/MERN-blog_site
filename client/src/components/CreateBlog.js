@@ -1,6 +1,9 @@
 import {useState} from "react";
+import { useAsyncValue, useNavigate } from "react-router-dom";
 
 const CreateBlog = () => {
+    const navigate = useNavigate();
+
     const [title, setTitle] = useState("");
     const [author, setAuthor] = useState("");
     const [content, setContent] = useState("");
@@ -14,7 +17,7 @@ const CreateBlog = () => {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(blog)
           }).then(() => {
-            window.location.href = '/'
+            navigate("/");
           }).catch(err => console.log(err));
     };
 

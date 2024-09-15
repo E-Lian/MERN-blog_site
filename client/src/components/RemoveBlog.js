@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 const RemoveBlog = ({blogId}) => {
+    const navigate = useNavigate();
 
     const handleRemove = () => {
         fetch(`/blog/${blogId}`, {
@@ -7,7 +10,7 @@ const RemoveBlog = ({blogId}) => {
             if (res.status === 404) {
                 alert("Something's wrong. Can't delete this blog.")
             } else {
-                window.location.href = '/'
+                navigate("/");
                 alert("This blog has been removed successfully.")
             }
           }).catch(err => console.log(err));

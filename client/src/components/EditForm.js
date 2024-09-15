@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 const EditForm = () => {
-  const params = useParams();
+  const { blogId } = useParams();
+  const navigate = useNavigate();
 
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [content, setContent] = useState("");
   useEffect(() => {
-    fetch(`/blog/${params.blogId}`)
+    fetch(`/blog/${blogId}`)
       .then((response) => response.json())
       .then((data) => {
         setTitle(data.title);
@@ -22,13 +23,13 @@ const EditForm = () => {
     evt.preventDefault();
     const blog = { title, author, content };
 
-    fetch(`/blog/${params.blogId}`, {
+    fetch(`/blog/${blogId}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(blog),
     })
       .then(() => {
-        window.location.href = "/";
+        navigate("/"); // Redirects without a full page reload
       })
       .catch((err) => console.log(err));
   };
@@ -36,7 +37,7 @@ const EditForm = () => {
   return (
     <div className="form edit-blog">
       <h1>Edit Blog</h1>
-      <form onSubmit={handleSubmit}>
+      <form>
         <label for="edit-title">Title:</label>
         <input
           type="text"
@@ -46,11 +47,11 @@ const EditForm = () => {
             setTitle(e.target.value);
           }}
         />
-        <br/>
+        <br />
         <label>
           Author: <span class="edit-author">{author}</span>
         </label>
-        <br/>
+        <br />
         <label for="edit-content">Content:</label>
         <textarea
           value={content}
@@ -59,8 +60,10 @@ const EditForm = () => {
             setContent(e.target.value);
           }}
         ></textarea>
-        <br/>
-        <button type="submit">Submit edit</button>
+        <br />
+        <button type="submit" onClick={handleSubmit}>
+          Submit edit
+        </button>
       </form>
     </div>
   );
