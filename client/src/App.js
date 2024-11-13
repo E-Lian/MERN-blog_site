@@ -1,14 +1,15 @@
-import {createBrowserRouter, RouterProvider,} from "react-router-dom";
+import { createBrowserRouter, RouterProvider, } from "react-router-dom";
 
 import './App.css';
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Blog from './components/Blog';
 import BlogList from './components/BlogList';
 import CreateBlog from "./components/CreateBlog";
-import NotFound from './components/NotFound';
-import Blog from './components/Blog';
 import EditForm from "./components/EditForm";
+import Footer from "./components/Footer";
 import LoginPage from "./components/LoginPage";
+import Navbar from "./components/Navbar";
+import NotFound from './components/NotFound';
+import RegisterPage from "./components/RegisterPage";
 
 
 const router = createBrowserRouter([
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
   {
     path: '/login',
     element: <LoginPage/>
+  },
+  {
+    path: '/register',
+    element: <RegisterPage/>
   },
   {
     path: '/create',

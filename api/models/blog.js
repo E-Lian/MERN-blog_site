@@ -11,7 +11,7 @@ const blogSchema = new mongoose.Schema({
         default: Date.now
     },
     author: {
-        type: String,
+        type: String, // id of user
         required: true,
         default: "y1hua"
     },

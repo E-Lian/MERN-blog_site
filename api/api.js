@@ -12,8 +12,10 @@ db.once('open', () => console.log('Database connected'))
 
 //const deadlineRouter = require('./routes/deadline')
 const blogRouter = require('./routes/blog')
+const userRouter = require('./routes/user')
 
 app.use(express.json())
+app.use('/user', userRouter)
 app.use('/', blogRouter)
 
 app.listen(5000, () => console.log('Server started'))

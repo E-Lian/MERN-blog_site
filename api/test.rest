@@ -24,3 +24,15 @@ Content-Type: application/json
     "content": "Edited blog",
     "author": "y1hua"
 }
+
+###
+GET http://localhost:5000/user/all
+
+###
+POST http://localhost:5000/user/create
+Content-Type: application/json
+
+{
+    "username": "y1hua",
+    "password": "eva123456"
+}

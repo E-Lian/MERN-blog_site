@@ -1,17 +1,18 @@
 import { useState } from "react";
 
-const LoginPage = () => {
+const RegisterPage = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
-    const handleLogin = (evt) => {
+    const handleRegister = (evt) => {
         // TODO
     }
 
+
     return (
-        <div className="login-page">
+        <div className="register-page">
             <h1>Login To Your Account</h1>
-            <form className="login-form" onSubmit={handleLogin}>
+            <form className="register-form" onSubmit={handleRegister}>
                 <label for="username">Username:</label>
                 <input type="text" name="username" value={username} onChange={(e) => {
                     setUsername(e.target.value);
@@ -20,11 +21,11 @@ const LoginPage = () => {
                 <input type="password" name="password" value={password} onChange={(e) => {
                     setPassword(e.target.value);
                 }}/><br/>
-                <button>Login</button>
+                <button>Register</button>
             </form>
-            <a href='/register' className="link">Register</a>
+            <a href='/login' className="link">Login</a>
         </div>
     )
 }
 
-export default LoginPage;
+export default RegisterPage;
