@@ -29,10 +29,41 @@ Content-Type: application/json
 GET http://localhost:5000/user/all
 
 ###
-POST http://localhost:5000/user/create
+POST http://localhost:5000/user/register
 Content-Type: application/json
 
 {
     "username": "y1hua",
     "password": "eva123456"
 }
+
+###
+POST http://localhost:5000/user/login
+Content-Type: application/json
+
+{
+    "username": "y1hua",
+    "password": "eva123456"
+}
+
+###
+POST http://localhost:5000/user/login
+Content-Type: application/json
+
+{
+    "username": "Y1HUA",
+    "password": "eva123456"
+}
+
+###
+POST http://localhost:5000/user/login
+Content-Type: application/json
+
+{
+    "username": "y1hua",
+    "password": "WTF"
+}
+
+
+###
+DELETE http://localhost:5000/user/672fe1419718c11a1ae23d0a
