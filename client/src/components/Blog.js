@@ -1,7 +1,7 @@
-import { Link, useParams } from "react-router-dom";
 import React, { useEffect, useState } from "react";
-import RemoveBlog from "./RemoveBlog";
+import { Link, useParams } from "react-router-dom";
 import EditBlog from "./EditBlog";
+import RemoveBlog from "./RemoveBlog";
 
 const Blog = () => {
   const params = useParams();
