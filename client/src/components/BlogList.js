@@ -17,11 +17,11 @@ const BlogList = () => {
     <div className="blog-list">
       {(typeof message.blogs === 'undefined') ? (
         <h1>Loading...</h1>
-      ) : (message.blogs.toReversed().map((blog, i) => {
-        return (<BlogPreview blog={blog}/>)
+      ) : (message.blogs.toReversed().map((b, i) => {
+        return (<BlogPreview key={b.id || i} blog={b}/>)
       }))}
     </div>
   )
   }
-   
+
   export default BlogList;

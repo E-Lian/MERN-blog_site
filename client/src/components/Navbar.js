@@ -1,10 +1,9 @@
-
+import { Link } from "react-router-dom";
 const Navbar = () => {
-  // TODO: see if we can change the redirection for it to use react-router-dom
   return (
     <nav className="navbar">
-      <a href="/" className="name">A Blog Site</a>
-      <a href="/create" className="create-button">New Blog</a>
+      <Link to="/" className="name">A Blog Site</Link>
+      <Link to="/create" className="create-button">New Post</Link>
     </nav>
   );
 }

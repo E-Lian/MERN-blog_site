@@ -33,8 +33,8 @@ POST http://localhost:5000/user/register
 Content-Type: application/json
 
 {
-    "username": "y1hua",
-    "password": "eva123456"
+    "username": "E-Lian",
+    "password": "evalian123456"
 }
 
 ###
@@ -66,4 +66,4 @@ Content-Type: application/json
 
 
 ###
-DELETE http://localhost:5000/user/672fe1419718c11a1ae23d0a
+DELETE http://localhost:5000/user/673476e501b686467e994ebf

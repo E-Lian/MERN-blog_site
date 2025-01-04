@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider, } from "react-router-dom";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 
 import './App.css';
 import Blog from './components/Blog';
@@ -12,43 +12,35 @@ import NotFound from './components/NotFound';
 import RegisterPage from "./components/RegisterPage";
 
 
+const Layout = () => (
+  <>
+    <Navbar />
+    <div className="content">
+      <Outlet /> {/* renders child route */}
+    </div>
+    <Footer />
+  </>
+);
+
 const router = createBrowserRouter([
   {
-    path: '/',
-    element: <BlogList/>,
-    errorElement: <NotFound/>
-  }, 
-  {
-    path: '/login',
-    element: <LoginPage/>
+    element: <Layout />, // Apply the layout for all routes
+    errorElement: <NotFound />,
+    children: [
+      { path: '/', element: <BlogList /> },
+      { path: '/login', element: <LoginPage /> },
+      { path: '/register', element: <RegisterPage /> },
+      { path: '/create', element: <CreateBlog /> },
+      { path: '/blog/edit/:blogId', element: <EditForm /> },
+      { path: '/blog/:blogId', element: <Blog /> },
+    ],
   },
-  {
-    path: '/register',
-    element: <RegisterPage/>
-  },
-  {
-    path: '/create',
-    element: <CreateBlog/>
-  }, 
-  {
-    path: '/blog/edit/:blogId',
-    element: <EditForm />
-  },
-  {
-    path: '/blog/:blogId',
-    element: <Blog />
-  }
 ]);
 
 function App() {
-  
   return (
     <div className="App">
-      <Navbar/>
-      <div className="content">
-        <RouterProvider router={router}/>
-      </div>
-      <Footer/>
+      <RouterProvider router={router} />
     </div>
   );
 }

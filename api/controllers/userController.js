@@ -32,7 +32,6 @@ exports.make_user = asyncHandler(async (req, res, next) => {
 
 // check username and password combination
 exports.check_user = asyncHandler(async (req, res, next) => {
-    // TODO
     const {username, password} = req.body
 
     const user = await User.findOne({username: username})

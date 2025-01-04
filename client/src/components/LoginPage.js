@@ -1,12 +1,22 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
+    // implement login session
+    const navigate = useNavigate();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
     const handleLogin = (evt) => {
-        // TODO
+        evt.preventDefault();
+        const user = {username, password};
+        fetch('/user/login', {
+            method: 'POST',
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(user)
+        }).then(() => {
+            navigate("/");
+        }).catch(err => console.log(err));
     }
 
     return (
