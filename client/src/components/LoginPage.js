@@ -2,7 +2,8 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
-    // implement login session
+    // TODO: handle login successful/failed cases
+    // TODO: implement login session
     const navigate = useNavigate();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");

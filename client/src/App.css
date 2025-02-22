@@ -1,7 +1,7 @@
 * {
-  background-color: #1b1b1b;
+  background-color: #e5ded4;
   font-family: Arial;
-  color: #f5f5f7;
+  color: #000020;
 }
 
 
@@ -26,13 +26,13 @@
 }
 
 .navbar {
-  background-color: #69f802;
+  background-color: #020329;
   height: 100px;
 }
 
 .navbar .name {
-  background-color: #69f802;
-  color: #1b1b1b;
+  background-color: #020329;
+  color: #e5ded4;
   font-weight: 700;
   font-size: 40px;
   padding: 25px 0 25px 40px;
@@ -41,8 +41,8 @@
 }
 
 .navbar .create-button {
-  background-color: #69f802;
-  color: #1b1b1b;
+  background-color: #020329;
+  color: #e5ded4;
   text-decoration: none;
   font-weight: bold;
   font-size: 20px;
@@ -53,12 +53,12 @@
 }
 
 .navbar .create-button:hover {
-  background-color: rgb(88, 204, 6);
-  color: #030303;
+  background-color: #0d0f45;
+  color: #e5ded4;
 }
 
 .footer {
-  background-color: #2b2b2b;
+  background-color: #020329;
   padding: 50px;
   text-align: center;
   font-size: 30px;
@@ -66,7 +66,7 @@
 
 .blog-prev {
   align-self: center;
-  background-color: #3b3b3b;
+  background-color: #020329;
   width: 50%;
   height: 130px;
   margin: 30px auto;
@@ -75,63 +75,114 @@
 }
 
 .blog-prev:hover {
-  box-shadow: 0 4px 8px 0 #2b2b2b, 0 6px 20px 0 #2b2b2b inset;
+  box-shadow: 0 4px 8px 0 #020329, 0 6px 20px 0 #020329 inset;
 }
 
 .blog-prev * {
-  background-color: #3b3b3b;
+  background-color: #020329;
   margin-left: 10%;
   text-decoration: none;
 }
 
 .blog-prev .title {
+  color: #e5ded4;
   font-size: 40px;
   text-decoration: none;
 }
 
 .blog-prev .author {
-  color:#11cd0ac0;
+  color:#e5ded4;
   font-size: 15px;
 }
 
-.form {
-  max-width: 400px;
-  margin: 0 auto;
+.create-blog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 360px;
+  margin: 40px auto;
+}
+
+.create-form {
+  background-color: white;
+}
+
+.create-blog h1 {
+  background-color: white;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #020329;
   text-align: center;
 }
 
-.form label {
+.create-blog label {
+  background-color: white;
   text-align: left;
   display: block;
-  font-size: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 10px;
+  color: #020329;
 }
 
-.form [type=text], .form textarea {
+.create-blog input,
+.create-blog textarea {
+  background-color: white;
   width: 100%;
-  padding: 6px 10px;
-  margin: 10px 0;
-  border: 1px solid #5b5b5b;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: border 0.2s ease-in-out;
   box-sizing: border-box;
-  display: block;
 }
 
-.form textarea {
+.create-blog input {
+  background-color: #e5ded4;
+}
+
+.create-blog textarea {
   height: 130px;
+  resize: vertical;
+  background-color: #e5ded4;
+  border: 1px solid #ccc;
+  padding: 12px;
 }
 
-.form button {
-  border: 0px;
-  font-size: 20px;
-  font-weight: bold;
-  background-color: #0f950a;
-  padding: 10px 25px;
-  border-radius: 5px;
-  margin-bottom: 40px;
+.create-blog input:focus, 
+.create-blog textarea:focus {
+  border-color: #020329;
+  box-shadow: 0 0 5px rgba(2, 3, 41, 0.3);
 }
 
-.form button:hover {
-  box-shadow: 0 10px 30px #3b3b3b;
+.create-blog button {
+  display: block;
+  margin: 20px auto 0;
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #020329;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, box-shadow 0.3s;
+  margin-top: 20px;
 }
+
+.create-blog button:hover {
+  background: #040541;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
 
 .blog-page {
   margin: auto;
@@ -146,6 +197,7 @@
 }
 
 .blog-page .blog-title {
+  color: #0b0d4b;
   padding-top: 20px;
   font-size: 70px;
 }
@@ -156,7 +208,7 @@
 }
 
 .blog-page .blog-author {
-  color: #0f950a;
+  color: #0b0d4b;
   font-size: 30px;
 }
 
@@ -179,7 +231,7 @@
 }
 
 .remove-blog {
-  color: #fa5e55;
+  color: #b9423c;
   max-width: 8%;
   padding: 10px 12px;
   margin: 50px auto;
@@ -188,14 +240,14 @@
 }
 
 .remove-blog:hover {
-  background-color: #fa5e55;
+  background-color: #b9423c;
   color: #f5f5f7;
 }
 
 .edit-button {
   text-decoration: none;
   font-size: larger;
-  color: #0078d4;
+  color: #005697;
   max-width: 8%;
   padding: 10px 12px;
   margin: 50px 20px;
@@ -204,8 +256,8 @@
 }
 
 .edit-button:hover {
-  background-color: #0078d4;
-  color: #f5f5f7;
+  background-color: #005697;
+  color: #ffffff;
 }
 
 .edit-blog *{
@@ -217,5 +269,248 @@
 }
 
 .edit-blog .edit-author {
-  color: #0f950a;
+  color: #020329;
+}
+
+.login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #e5ded4;
+  color: #020329;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.login-page h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 320px;
+}
+
+.login-form label {
+  background: white;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.login-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: border 0.2s ease-in-out;
+}
+
+.login-form input:focus {
+  border-color: #020329;
+}
+
+button {
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background: #020329;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #040541;
+}
+
+.link {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #020329;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.register-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #e5ded4;
+  color: #020329;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.register-page h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 320px;
+}
+
+.register-form label {
+  background-color: white;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.register-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: border 0.2s ease-in-out;
+}
+
+.register-form input:focus {
+  border-color: #020329;
+}
+
+button {
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background: #020329;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #040541;
+}
+
+.link {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #020329;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+
+.edit-blog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 360px;
+  margin: 40px auto;
+}
+
+.edit-form {
+  background-color: white;
+}
+
+.edit-blog h1 {
+  background-color: white;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #020329;
+  text-align: center;
+}
+
+.edit-blog label {
+  background-color: white;
+  text-align: left;
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 10px;
+  color: #020329;
+}
+
+.edit-author {
+  background-color: white;
+}
+
+.edit-blog input,
+.edit-blog textarea {
+  background-color: white;
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: border 0.2s ease-in-out;
+  box-sizing: border-box;
+}
+
+.edit-blog input {
+  background-color: #e5ded4;
+}
+
+.edit-blog textarea {
+  height: 130px;
+  resize: vertical;
+  background-color: #e5ded4;
+  border: 1px solid #ccc;
+  padding: 12px;
+}
+
+.edit-blog input:focus, 
+.edit-blog textarea:focus {
+  border-color: #020329;
+  box-shadow: 0 0 5px rgba(2, 3, 41, 0.3);
+}
+
+.edit-blog button {
+  display: block;
+  margin: 20px auto 0;
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #020329;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, box-shadow 0.3s;
+  margin-top: 20px;
+}
+
+.edit-blog button:hover {
+  background: #040541;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }

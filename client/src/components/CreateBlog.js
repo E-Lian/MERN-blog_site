@@ -1,5 +1,5 @@
-import {useState} from "react";
-import { useAsyncValue, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const CreateBlog = () => {
     const navigate = useNavigate();
@@ -22,9 +22,9 @@ const CreateBlog = () => {
     };
 
     return (
-        <div className="form create-blog">
+        <div className="create-blog">
             <h1>Create New Blog</h1>
-            <form onSubmit={handleSubmit}>
+            <form className="create-form" onSubmit={handleSubmit}>
                 <label for="title">Title:</label>
                 <input type="text" id="title" name="title" value={title} onChange={(e) => {
                     setTitle(e.target.value);

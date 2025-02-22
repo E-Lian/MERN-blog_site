@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const EditForm = () => {
   const { blogId } = useParams();
@@ -17,7 +17,7 @@ const EditForm = () => {
         setContent(data.content);
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [blogId]);
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -35,9 +35,9 @@ const EditForm = () => {
   };
 
   return (
-    <div className="form edit-blog">
+    <div className="edit-blog">
       <h1>Edit Blog</h1>
-      <form>
+      <form className="edit-form">
         <label for="edit-title">Title:</label>
         <input
           type="text"
@@ -47,11 +47,10 @@ const EditForm = () => {
             setTitle(e.target.value);
           }}
         />
-        <br />
         <label>
           Author: <span class="edit-author">{author}</span>
-        </label>
-        <br />
+          </label>
+          <br />
         <label for="edit-content">Content:</label>
         <textarea
           value={content}

@@ -1,6 +1,7 @@
 const asyncHandler = require("express-async-handler");
 const User = require("../models/user");
 const bcrypt = require("bcrypt");
+const jwt = require('jsonwebtoken');
 
 // get all users
 exports.user_list = asyncHandler(async (req, res, next) => {
@@ -9,13 +10,14 @@ exports.user_list = asyncHandler(async (req, res, next) => {
 });
 
 // create a user
+// used for register
 exports.make_user = asyncHandler(async (req, res, next) => {
     const { username, password } = req.body;
 
     // Check if the username already exists
     const existingUser = await User.findOne({ username });
     if (existingUser) {
-        return res.status(400).json({ message: "Username already exists" });
+        return res.status(400).send({ message: "Username already exists" });
     }
 
     // Generate a salt and hash the password
@@ -31,20 +33,26 @@ exports.make_user = asyncHandler(async (req, res, next) => {
 })
 
 // check username and password combination
+// used for login
 exports.check_user = asyncHandler(async (req, res, next) => {
     const {username, password} = req.body
 
     const user = await User.findOne({username: username})
     if (!user) {
-        return res.status(404).json({message: "User not found"})
+        return res.status(404).send({message: "User not found"})
     }
 
     // compare password
     const isMatch = await bcrypt.compare(password, user.password)
     if (isMatch) {
-        return res.json({message: "Login successful"})
+        const id = user.id
+        const token = jwt.sign({id}, "jwtSecret", {
+            expiresIn: 300, // 300 seconds
+        }) // TODO: replace jwtSecret with env variable afterwards
+        const {password, ...userWoPassword} = user;
+        return res.json({auth: true, token: token, result: userWoPassword})
     } else {
-        return res.status(401).json({message: "Username/Password incorrect"})
+        return res.status(401).send({message: "Username/Password incorrect"})
     }
 })
 
